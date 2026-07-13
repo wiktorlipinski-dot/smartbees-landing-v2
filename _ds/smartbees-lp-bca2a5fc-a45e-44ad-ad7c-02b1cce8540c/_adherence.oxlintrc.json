@@ -1,0 +1,278 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/general/Benefits/**",
+              "components/general/CtaBanner/**",
+              "components/general/Faq/**",
+              "components/general/Feature/**",
+              "components/general/FinalCta/**",
+              "components/general/FooterLp/**",
+              "components/general/Hero/**",
+              "components/general/Pricing/**",
+              "components/general/Process/**",
+              "components/general/Stats/**",
+              "components/general/Testimonials/**",
+              "components/general/TrustBar/**",
+              "tweaks-panel.jsx"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Funnel Display|Inter))/i]",
+        "message": "Font not provided by the design system. Available: Funnel Display, Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Benefits'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|tone|title|subtitle|items|key|ref|className|style|children)$/]",
+        "message": "<Benefits> doesn't accept that prop. Declared props: variant, tone, title, subtitle, items."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Benefits'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:a|b)$/]",
+        "message": "<Benefits> variant must be one of 'a' | 'b'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Benefits'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Benefits> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CtaBanner'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|tone|title|sub|ctaLabel|key|ref|className|style|children)$/]",
+        "message": "<CtaBanner> doesn't accept that prop. Declared props: variant, tone, title, sub, ctaLabel."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CtaBanner'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:a|b)$/]",
+        "message": "<CtaBanner> variant must be one of 'a' | 'b'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CtaBanner'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<CtaBanner> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Faq'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|items|defaultOpen|key|ref|className|style|children)$/]",
+        "message": "<Faq> doesn't accept that prop. Declared props: tone, title, items, defaultOpen."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Faq'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Faq> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Feature'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|ctaLabel|bullets|hideMockup|key|ref|className|style|children)$/]",
+        "message": "<Feature> doesn't accept that prop. Declared props: tone, title, ctaLabel, bullets, hideMockup."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Feature'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Feature> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FinalCta'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|tone|title|sub|ctaLabel|benefits|key|ref|className|style|children)$/]",
+        "message": "<FinalCta> doesn't accept that prop. Declared props: variant, tone, title, sub, ctaLabel, benefits."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FinalCta'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:a|b)$/]",
+        "message": "<FinalCta> variant must be one of 'a' | 'b'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FinalCta'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<FinalCta> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FooterLp'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|trustChips|key|ref|className|style|children)$/]",
+        "message": "<FooterLp> doesn't accept that prop. Declared props: tone, trustChips."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FooterLp'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<FooterLp> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|tone|title|formTitle|ctaLabel|pills|trustLogos|hideTopbar|key|ref|className|style|children)$/]",
+        "message": "<Hero> doesn't accept that prop. Declared props: variant, tone, title, formTitle, ctaLabel, pills, trustLogos, hideTopbar."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:a|b)$/]",
+        "message": "<Hero> variant must be one of 'a' | 'b'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Hero> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pricing'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|plans|key|ref|className|style|children)$/]",
+        "message": "<Pricing> doesn't accept that prop. Declared props: tone, title, plans."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pricing'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Pricing> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Process'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|steps|key|ref|className|style|children)$/]",
+        "message": "<Process> doesn't accept that prop. Declared props: tone, title, steps."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Process'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Process> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stats'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|items|key|ref|className|style|children)$/]",
+        "message": "<Stats> doesn't accept that prop. Declared props: tone, title, items."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stats'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Stats> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Testimonials'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|tone|title|quotes|key|ref|className|style|children)$/]",
+        "message": "<Testimonials> doesn't accept that prop. Declared props: variant, tone, title, quotes."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Testimonials'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:a|b)$/]",
+        "message": "<Testimonials> variant must be one of 'a' | 'b'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Testimonials'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<Testimonials> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TrustBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|heading|logos|key|ref|className|style|children)$/]",
+        "message": "<TrustBar> doesn't accept that prop. Declared props: tone, heading, logos."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TrustBar'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:base|dim|panel|ember)$/]",
+        "message": "<TrustBar> tone must be one of 'base' | 'dim' | 'panel' | 'ember'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Benefits": {
+        "replaces": []
+      },
+      "CtaBanner": {
+        "replaces": []
+      },
+      "Faq": {
+        "replaces": []
+      },
+      "Feature": {
+        "replaces": []
+      },
+      "FinalCta": {
+        "replaces": []
+      },
+      "FooterLp": {
+        "replaces": []
+      },
+      "Hero": {
+        "replaces": []
+      },
+      "Pricing": {
+        "replaces": []
+      },
+      "Process": {
+        "replaces": []
+      },
+      "Stats": {
+        "replaces": []
+      },
+      "Testimonials": {
+        "replaces": []
+      },
+      "TrustBar": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-btn",
+      "--accent-btn-hover",
+      "--accent-wash",
+      "--card-gradient",
+      "--content-width",
+      "--font-body",
+      "--font-display",
+      "--ink-black",
+      "--outline",
+      "--outline-dark",
+      "--pad-desktop",
+      "--pad-mobile",
+      "--radius",
+      "--radius-card",
+      "--radius-pill",
+      "--surface",
+      "--surface-bright",
+      "--surface-dim",
+      "--surface-high",
+      "--surface-highest",
+      "--text",
+      "--text-grey",
+      "--text-muted",
+      "--text-secondary"
+    ],
+    "tokenKinds": {
+      "--surface": "color",
+      "--surface-dim": "color",
+      "--surface-bright": "color",
+      "--surface-high": "color",
+      "--surface-highest": "color",
+      "--ink-black": "color",
+      "--accent": "color",
+      "--accent-btn": "color",
+      "--accent-btn-hover": "color",
+      "--accent-wash": "color",
+      "--text": "font",
+      "--text-grey": "font",
+      "--text-secondary": "font",
+      "--text-muted": "font",
+      "--outline": "color",
+      "--outline-dark": "color",
+      "--card-gradient": "other",
+      "--radius": "radius",
+      "--radius-card": "radius",
+      "--radius-pill": "radius",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--content-width": "spacing",
+      "--pad-mobile": "spacing",
+      "--pad-desktop": "spacing"
+    },
+    "fontFamilies": [
+      "Funnel Display",
+      "Inter"
+    ]
+  }
+}
